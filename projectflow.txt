@@ -1,0 +1,40 @@
+'''
+FYI, please use Flask framework instead of Streamlit if deploying via 
+AWS App Runner service otherwise app will be deployed but UI will not render.
+'''
+
+1. Create a git repo and clone it in local.
+2. Setup your venv:
+    > conda create -p ragproj1 python==3.10 -y
+    > conda activate .... (now add your requirements.txt snd setup.py file)
+    > pip install -r requirements.txt
+3. Add ragproj1 to .gitignore
+4. Create a main SRC/QASystem directory and add __init__.py, 
+   ingestion.py and retrievalandgeneration.py file inside/ add code to it.
+5. Setting up AWS configuration:
+    > Create user: AWS console>>IAM>>User>>Create User>>name: "llmops-proj1">>next
+      >>attach poilicies directly>>select "AdministratorAccess">>next>>Create user
+      >>go to user>>security credentials>>create access key>>CLI>>check agree>>next>>create
+      >>download csv
+    > configuring aws cli: On pwershell/bash terminal - "aws configure">>enter the required credentials
+6. Create app.py file and add code to it then run it to use the application. (streamlit run app.py)
+7. Setup your dockerfile and .dockerignore now. Add components to .dockerignore
+8. Create a .github dir>>inside>>workflows dir and main.yaml inside, add the code for CICD.
+9. Setting up AWS ECR repo:
+    > AWS ECR>>Create>>private>>name: ragproj1>>Create repo>>keep the URI for later use
+10. Setting up below secret and variable on Github:
+    AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY
+    AWS_DEFAULT_REGION
+    AWS_ECR_REPO_URI
+11. Now commit and push your work to Github to see CICD action taking place. 
+    It'll push image to AWS ECR repo.
+12. Now we will deploy our ECR image via AWS App Runner service:
+    AWS App Runner>>Create an app runner service>>Container registery-Amazon ECR>>
+    >>Enter URI link of ECR repo or browse>>Automatic>>Create new service role>>
+    >>next>>name: rag-proj1>>2cpu & 6GB>>port - 8501 (same as Dockerfile)>>
+    >>hit next(keeping rest settings as default)>>Create and Deploy
+    (this will take several minutes but your app will be deployed and you'll get a URL to access it)
+
+Delete the AWS resource:
+User, ECR repo and AWS App Runner service
