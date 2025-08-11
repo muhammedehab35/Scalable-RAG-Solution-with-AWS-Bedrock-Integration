@@ -1,6 +1,5 @@
 # 🚀 Scalable RAG Solution with AWS Bedrock Integration
 
-[![Build Status](https://github.com/yourusername/scalable-rag-aws-bedrock/workflows/CI-CD/badge.svg)](https://github.com/yourusername/scalable-rag-aws-bedrock/actions)
 [![AWS](https://img.shields.io/badge/AWS-Cloud%20Native-orange)](https://aws.amazon.com/)
 [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://python.org)
 [![LangChain](https://img.shields.io/badge/LangChain-Framework-green)](https://langchain.com)
