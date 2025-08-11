@@ -1,0 +1,1 @@
+# Scalable-RAG-Solution-with-AWS-Bedrock-Integration
