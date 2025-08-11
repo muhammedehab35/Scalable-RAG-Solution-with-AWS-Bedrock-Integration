@@ -58,7 +58,7 @@ The **Scalable RAG Solution with AWS Bedrock Integration** is a production-grade
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/scalable-rag-aws-bedrock.git
+git clone https://github.com/muhammedehab35/Scalable-RAG-Solution-with-AWS-Bedrock-Integration.git
 cd scalable-rag-aws-bedrock
 
 # Create and activate virtual environment
